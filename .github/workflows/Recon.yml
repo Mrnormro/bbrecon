@@ -20,12 +20,12 @@ jobs:
 
       - name: Get all domains
         run: |
-          curl -s "https://gist.githubusercontent.com/Mrnormro/d5f41fe4f930557bde213ed3b9df4fa8/raw/63ac2bf592de9f169fef963ad4d486d336cba76e/trgt.txt" \
+          curl -s "https://gist.githubusercontent.com/Mrnormro/819c08a1470f536bd38919ebe7194a4f/raw/cc47d49fba8b103c0a91ac4ddd377bbf4133f1fb/trg.txt" \
           | assetfinder -subs-only \
           | httprobe -c 50 -t 3000 \
           | sed 's/https\?:\/\///g; s/www\.//g; s/http\?:\/\///g' \
           | nuclei -silent -nc -attack-type pitchfork -rl 50 -bs 10 -c 10 -timeout 20 -retries 2 \
-          | tee New_portofantwerpbruges.$(date +%Y-%m-%d).txt
+          | tee vrlyy.$(date +%Y-%m-%d).txt
 
       - name: Set up Git user
         run: |
