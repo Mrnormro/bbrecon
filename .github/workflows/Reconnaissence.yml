@@ -20,7 +20,7 @@ jobs:
           
       - name: Running 
         run: |
-          curl -s "https://gist.githubusercontent.com/Mrnormro/11591a389206f5f61b92fbd6acc61c40/raw/362419426dbc6b96c27ea2f7eef1dba382c16dd8/stro.txt" | nuclei -silent -nc -attack-type pitchfork | tee Nuclei/result.$(date +%Y-%m-%d).txt
+          curl -s "https://gist.githubusercontent.com/Mrnormro/923c2b4bdd3507b6abefbd7025e92f20/raw/11b2df8f1e16b30161ae1018e2a69ec5c674a48f/tj.txt" | nuclei -silent -nc -attack-type pitchfork | tee Nuclei/result.$(date +%Y-%m-%d).txt
           
       - name: Set up Git user
         run: |
@@ -35,5 +35,5 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.PERSONAL_ACCES_TOKEN }}
           branch: master
